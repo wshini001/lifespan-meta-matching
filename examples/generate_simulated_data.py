@@ -1,4 +1,4 @@
-"""Generate longitudinal BCP-style inputs for five developmental outcomes."""
+"""Generate fully simulated longitudinal inputs for five BCP-style outcomes."""
 
 import argparse
 from pathlib import Path
@@ -34,8 +34,8 @@ def generate(output_dir, seed=42):
     education = rng.integers(0, 2, n_children)[child]
     motion = rng.uniform(0.05, 0.4, n)
     cohort = pd.DataFrame(edges, columns=[f"e{i}" for i in range(1, 1486)])
-    cohort["scan_id"] = [f"SIM_SCAN_{i:04d}" for i in range(n)]
-    cohort["imaging_numeric_id"] = [f"SIM_CHILD_{i:03d}" for i in child]
+    cohort["scan_id"] = [f"BCP_{i + 1}_visit{v + 1}" for i, v in zip(child, visit)]
+    cohort["imaging_numeric_id"] = [f"BCP_{i + 1}" for i in child]
     cohort["scan_age_months"] = age
     cohort["sex_final"] = np.where(sex == 1, "M", "F")
     cohort["FD"] = motion

@@ -14,6 +14,6 @@ Provide input paths through the relevant entry script. Use `--help` to view its 
 
 ## Simulated example
 
-`examples/generate_simulated_data.py` generates a longitudinal cohort table with five developmental outcomes and a matching PC-feature table for the BCP demonstration. Column definitions are provided in the generator. The example uses CSV inputs; supported formats for other workflows are specified by their entry scripts.
+`examples/simulated_data/simulated_cohort.csv` contains generated longitudinal scans with five developmental outcomes. `simulated_pc_predictions.csv` supplies matching generated PC features. Child identifiers are `BCP_1` to `BCP_36`; visit identifiers distinguish repeated scans. `examples/generate_simulated_data.py` regenerates both inputs with seed 42 by default. Column definitions are provided in the generator. The example uses CSV inputs; supported formats for other workflows are specified by their entry scripts.
 
 See the [README](../README.md) to run the example and [MODULES.md](MODULES.md) to locate the analysis scripts.

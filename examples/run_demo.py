@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 from sklearn.kernel_ridge import KernelRidge
 
-from generate_simulated_data import OUTCOMES, generate
+from generate_simulated_data import OUTCOMES
 
 ALPHAS = (0.1, 1.0)
 BASELINE_WEIGHTS = (0.0, 0.5, 1.0)
@@ -105,11 +105,11 @@ def fit_outcome(cohort, source, outcome, preprocessing, kernels):
     return result, pd.DataFrame(selections)
 
 
-def run(work):
+def run(work, input_dir):
     root = Path(__file__).resolve().parents[1]
-    work = generate(work)
-    cohort = pd.read_csv(work / "simulated_cohort.csv")
-    source = pd.read_csv(work / "simulated_pc_predictions.csv")
+    work.mkdir(parents=True, exist_ok=True)
+    cohort = pd.read_csv(input_dir / "simulated_cohort.csv")
+    source = pd.read_csv(input_dir / "simulated_pc_predictions.csv")
     keys = ["scan_id", "imaging_numeric_id"]
     if not cohort[keys].equals(source[keys]):
         raise ValueError("Simulated cohort and source rows differ")
@@ -168,14 +168,21 @@ def main():
     parser.add_argument(
         "--work-dir", help="Optional directory to retain generated demo files"
     )
+    parser.add_argument(
+        "--input-dir",
+        type=Path,
+        default=Path(__file__).resolve().parent / "simulated_data",
+        help="Directory containing simulated cohort and PC-feature CSV inputs",
+    )
     args = parser.parse_args()
+    input_dir = args.input_dir.resolve()
     if args.work_dir:
-        run(Path(args.work_dir).resolve())
+        run(Path(args.work_dir).resolve(), input_dir)
     else:
         with tempfile.TemporaryDirectory(
             prefix="meta_matching_bcp_simulated_"
         ) as directory:
-            run(Path(directory))
+            run(Path(directory), input_dir)
 
 
 if __name__ == "__main__":
