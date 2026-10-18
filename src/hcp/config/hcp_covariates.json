@@ -1,0 +1,9 @@
+{
+  "basic_age_sex": [
+    "Age_in_Yrs",
+    "Sex",
+    "age_sq",
+    "age_sex",
+    "age_sq_sex"
+  ]
+}

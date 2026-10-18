@@ -1,0 +1,17 @@
+{
+  "seed": 20261005,
+  "seed_offset": 3,
+  "bootstrap_batch_size": 250,
+  "signflip_batch_size": 500,
+  "n_cluster_bootstrap": 20000,
+  "n_cluster_signflip_permutations": 50000,
+  "outcome": "BCP receptive language",
+  "y_column": "y_true_resid",
+  "baseline_column": "formal_baseline",
+  "final_column": "phase9_plus_diseaseraw_targetadaptive_guarded",
+  "id_column": "imaging_numeric_id",
+  "fold_column": "outer_fold",
+  "cluster_unit": "child",
+  "n_rows": 241,
+  "n_clusters": 141
+}

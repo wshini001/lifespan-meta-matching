@@ -1,0 +1,17 @@
+{
+  "seed": 20261005,
+  "seed_offset": 5,
+  "bootstrap_batch_size": 250,
+  "signflip_batch_size": 500,
+  "n_cluster_bootstrap": 20000,
+  "n_cluster_signflip_permutations": 50000,
+  "outcome": "BCP visual reception",
+  "y_column": "y_true_resid",
+  "baseline_column": "y_pred_baseline_signed72_corr",
+  "final_column": "y_pred_krr_anchor_plus_dnnraw_sequential",
+  "id_column": "imaging_numeric_id",
+  "fold_column": "fold",
+  "cluster_unit": "child",
+  "n_rows": 289,
+  "n_clusters": 159
+}

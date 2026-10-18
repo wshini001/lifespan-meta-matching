@@ -1,0 +1,17 @@
+{
+  "seed": 20261005,
+  "seed_offset": 1,
+  "bootstrap_batch_size": 250,
+  "signflip_batch_size": 500,
+  "n_cluster_bootstrap": 20000,
+  "n_cluster_signflip_permutations": 50000,
+  "outcome": "ABCD cognition final43",
+  "y_column": "y_true_resid",
+  "baseline_column": "y_pred_abcd_nested",
+  "final_column": "y_pred_ensemble_nested",
+  "id_column": "src_subject_id",
+  "fold_column": "fold",
+  "cluster_unit": "participant",
+  "n_rows": 9954,
+  "n_clusters": 9954
+}

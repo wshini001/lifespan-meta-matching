@@ -1,0 +1,15 @@
+{
+  "n_scans": 395,
+  "n_children": 199,
+  "targets": {
+    "total": "increment_total_M88_vs_baseline",
+    "disease": "increment_disease",
+    "pc12": "increment_pc12",
+    "dnn": "increment_dnnraw_M88",
+    "final": "pred_final_M88"
+  },
+  "seed": 20260901,
+  "covariance_ddof": 1,
+  "participant_balance": "Within-child mean of edges and prediction targets, then sample covariance across children",
+  "target_scope": "All outer folds are included for each configured target."
+}

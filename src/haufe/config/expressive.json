@@ -1,0 +1,47 @@
+{
+  "n_scans": 289,
+  "n_children": 159,
+  "fold_column": "auto",
+  "covariance_ddof": 1,
+  "branches": {
+    "total_final_vs_baseline": {
+      "n_scans": 289,
+      "n_children": 159,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "left": "y_pred_dnnraw_M18_additive_gamma_extended_sensitivity",
+      "right": "y_pred_baseline_fmri_zlinear"
+    },
+    "dnnraw_M18_vs_disease_anchor": {
+      "n_scans": 289,
+      "n_children": 159,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "left": "y_pred_dnnraw_M18_additive_gamma_extended_sensitivity",
+      "right": "y_pred_diseaseraw_anchor"
+    },
+    "disease_anchor_vs_baseline": {
+      "n_scans": 289,
+      "n_children": 159,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "left": "y_pred_diseaseraw_anchor",
+      "right": "y_pred_baseline_fmri_zlinear"
+    }
+  }
+}

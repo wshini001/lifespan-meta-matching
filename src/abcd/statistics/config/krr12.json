@@ -1,0 +1,14 @@
+{
+  "subjectkey_col": "subjectkey",
+  "id_col": "src_subject_id",
+  "fold_col": "fold",
+  "y_col": "y_true_resid",
+  "baseline_col": "y_pred_abcd_nested",
+  "pc_col": "y_pred_pc_nested",
+  "avg_col": "y_pred_avg_raw_nested",
+  "ensemble_col": "y_pred_ensemble_nested",
+  "n_boot": 5000,
+  "n_perm": 2000,
+  "seed": 0,
+  "expected_n": 9954
+}

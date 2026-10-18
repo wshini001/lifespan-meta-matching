@@ -1,0 +1,17 @@
+{
+  "seed": 20261005,
+  "seed_offset": 4,
+  "bootstrap_batch_size": 250,
+  "signflip_batch_size": 500,
+  "n_cluster_bootstrap": 20000,
+  "n_cluster_signflip_permutations": 50000,
+  "outcome": "BCP expressive language",
+  "y_column": "y_true_resid",
+  "baseline_column": "y_pred_baseline_fmri_zlinear",
+  "final_column": "y_pred_dnnraw_M18_additive_gamma_extended_sensitivity",
+  "id_column": "imaging_numeric_id",
+  "fold_column": "fold",
+  "cluster_unit": "child",
+  "n_rows": 289,
+  "n_clusters": 159
+}

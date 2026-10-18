@@ -1,0 +1,14 @@
+# Analysis
+numpy
+pandas
+scipy
+scikit-learn
+joblib
+pyarrow
+statsmodels
+torch>=2.0
+nibabel
+
+# Code formatting
+black
+ruff

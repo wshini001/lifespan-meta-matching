@@ -1,0 +1,44 @@
+{
+  "n_scans": 289,
+  "n_children": 159,
+  "fold_column": "auto",
+  "covariance_ddof": 0,
+  "branches": {
+    "total_final_vs_baseline": {
+      "n_scans": 289,
+      "n_children": 159,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "column": "total_transfer_oof_increment"
+    },
+    "krr_anchor_vs_baseline": {
+      "n_scans": 289,
+      "n_children": 159,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "column": "krr_anchor_oof_increment"
+    },
+    "dnn_final_vs_krr_anchor": {
+      "n_scans": 229,
+      "n_children": 129,
+      "folds": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "column": "dnn_correction_oof_increment",
+      "active_column": "dnn_effectively_active"
+    }
+  }
+}

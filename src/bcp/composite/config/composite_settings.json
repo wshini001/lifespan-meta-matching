@@ -1,0 +1,49 @@
+{
+  "n_scans": 319,
+  "n_children": 166,
+  "covariates": [
+    "scan_age_months",
+    "age_sq",
+    "sex_male",
+    "FD",
+    "site_UNC",
+    "age_sex",
+    "age_sq_sex"
+  ],
+  "internal_weight": 0.7,
+  "raw_kernel": "zscore_linear",
+  "pc_kernel": "unitize_corr",
+  "alphas": [
+    0.1,
+    0.4,
+    1.0,
+    4.0,
+    10.0,
+    30.0,
+    100.0,
+    300.0,
+    1000.0
+  ],
+  "gamma_area_grid": [
+    0.0,
+    0.04,
+    0.1,
+    0.4,
+    1.0,
+    4.0,
+    10.0
+  ],
+  "gamma_pc_grid": [
+    0.0
+  ],
+  "gamma_raw_grid": [
+    0.0,
+    0.01,
+    0.04,
+    0.1,
+    0.4,
+    1.0,
+    4.0,
+    10.0
+  ]
+}

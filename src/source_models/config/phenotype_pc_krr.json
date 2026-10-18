@@ -1,0 +1,43 @@
+{
+  "source_family": "phenotype_pc",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "alphas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    0.4,
+    1.0,
+    4.0,
+    10.0,
+    15.0,
+    20.0
+  ],
+  "test_size": 0.2,
+  "valid_size": 0.2,
+  "min_train_obs": 50,
+  "min_valid_obs": 10,
+  "min_test_obs": 10,
+  "refit_on_train_valid": false,
+  "expected_n_subjects": 23668,
+  "target_names": [
+    "cognition_core__pc01",
+    "cognition_core__pc02",
+    "early_life_adversity__pc06",
+    "lifestyle_environment_superblock__pc01",
+    "lifestyle_environment_superblock__pc04",
+    "lifestyle_environment_superblock__pc05",
+    "mental_health_core__pc04",
+    "physiology_simple__pc01",
+    "physiology_simple__pc02",
+    "physiology_simple__pc03",
+    "sleep_circadian__pc02",
+    "sleep_circadian__pc04"
+  ]
+}

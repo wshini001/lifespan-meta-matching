@@ -1,0 +1,17 @@
+{
+  "seed": 20261005,
+  "seed_offset": 7,
+  "bootstrap_batch_size": 250,
+  "signflip_batch_size": 500,
+  "n_cluster_bootstrap": 20000,
+  "n_cluster_signflip_permutations": 50000,
+  "outcome": "BCP gross motor",
+  "y_column": "y_true_resid",
+  "baseline_column": "y_pred_baseline",
+  "final_column": "y_pred_krr_plus_dnn_multibranch",
+  "id_column": "imaging_numeric_id",
+  "fold_column": "fold",
+  "cluster_unit": "child",
+  "n_rows": 321,
+  "n_clusters": 166
+}

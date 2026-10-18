@@ -1,0 +1,17 @@
+{
+  "seed": 20261005,
+  "seed_offset": 6,
+  "bootstrap_batch_size": 250,
+  "signflip_batch_size": 500,
+  "n_cluster_bootstrap": 20000,
+  "n_cluster_signflip_permutations": 50000,
+  "outcome": "BCP fine motor",
+  "y_column": "y_true_resid",
+  "baseline_column": "pred_official_baseline",
+  "final_column": "pred_final_M88",
+  "id_column": "imaging_numeric_id",
+  "fold_column": "fold",
+  "cluster_unit": "child",
+  "n_rows": 395,
+  "n_clusters": 199
+}

@@ -1,0 +1,21 @@
+{
+  "n_scans": 241,
+  "n_children": 141,
+  "fold_column": "auto",
+  "covariance_ddof": 1,
+  "branches": {
+    "total_final_vs_baseline": {
+      "left": "phase9_plus_diseaseraw_targetadaptive_guarded",
+      "right": "formal_baseline",
+      "n_scans": 241,
+      "n_children": 141,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  }
+}
