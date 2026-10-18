@@ -16,3 +16,6 @@ work/
 *.nii.gz
 *.log
 .ruff_cache/
+
+.DS_Store
+.Rhistory
