@@ -1,7 +1,6 @@
 """Predict from standalone parameter exports without source participants/logs.
 
 Output rows describe target participants and must remain in authorized storage.
-This is a new bank-generation entry point, not a rerun of historical results.
 """
 
 import argparse
