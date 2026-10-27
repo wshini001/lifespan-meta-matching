@@ -2,7 +2,6 @@
 
 KRR conversion applies only to the row-centered, L2-normalized dot-product
 kernels used here. It is not an exporter for arbitrary nonlinear kernels.
-Legacy joblib inputs must be trusted. No retention/release permission is implied.
 """
 
 import hashlib
