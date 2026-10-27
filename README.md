@@ -56,23 +56,29 @@ For prediction-gain inference, use `src/statistics/infer_prediction_gain.py` wit
 
 See the [input guide](docs/INPUTS.md) for required file formats and the [module guide](docs/MODULES.md) for analysis entry points. Formatting tools and commands are described in the [development guide](docs/DEVELOPMENT.md).
 
-## Source parameters and restricted artifacts
+## Source parameter tools
 
-The original training and cohort-analysis code is preserved. Historical KRR
-bundles and DNN logs/splits can contain participant data; keep them outside Git.
-For reviewed parameter-only models, use the additional
-`src/source_models/export_source_parameters.py` and
-`src/source_models/infer_source_parameters.py` entry points. They support the
-six source banks used across ABCD, HCP and BCP without requiring source-participant
-matrices during exported-model inference. See
-[the parameter guide](docs/MODEL_PARAMETERS.md) for formats, input precision,
-prediction scale, alignment and historical bank compatibility.
+Use `src/source_models/export_source_parameters.py` to export parameter-only
+copies of trusted source models, and `src/source_models/infer_source_parameters.py`
+to apply those copies. Both commands provide `--help`. Original cohort-specific
+pipelines keep their existing input formats.
+
+```bash
+python src/source_models/infer_source_parameters.py \
+  --model-dir /path/to/model_parameters \
+  --cohort-csv /path/to/cohort.csv --id-column scan_id \
+  --prediction-scale z --out-csv /path/to/predictions.csv
+```
+
+The cohort CSV needs ordered RSFC columns `e1`–`e1485` and a unique row identifier.
+Match output names, prediction scale and seed averaging to the downstream
+pipeline, and align participants by identifiers. Raw-disease outputs are
+covariate-residual scores. Real cohort data, models and individual prediction
+files remain outside this repository; the bundled tables are generated examples.
 
 Run `python scripts/check_public_tree.py` and
-`python -m unittest discover -s tests -v` before committing. CI runs these checks
-with CPU PyTorch. Only the two generated demonstration CSVs are allowlisted data
-files; models, participant tables and archives are excluded. These checks do not
-certify source-data deletion or grant permission to publish model parameters.
+`python -m unittest discover -s tests -v` to check repository files and parameter
+handling. GitHub Actions runs these checks with CPU PyTorch.
 
 ## Reference
 
