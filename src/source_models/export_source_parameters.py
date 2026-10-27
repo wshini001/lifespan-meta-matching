@@ -1,7 +1,4 @@
 """Export one trusted legacy source model without participant-record fields.
-
-Private conversion only. This does not grant permission to retain/publish a model.
-Original models and scientific predictions are never overwritten.
 """
 
 import argparse
