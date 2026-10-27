@@ -56,6 +56,24 @@ For prediction-gain inference, use `src/statistics/infer_prediction_gain.py` wit
 
 See the [input guide](docs/INPUTS.md) for required file formats and the [module guide](docs/MODULES.md) for analysis entry points. Formatting tools and commands are described in the [development guide](docs/DEVELOPMENT.md).
 
+## Source parameters and restricted artifacts
+
+The original training and cohort-analysis code is preserved. Historical KRR
+bundles and DNN logs/splits can contain participant data; keep them outside Git.
+For reviewed parameter-only models, use the additional
+`src/source_models/export_source_parameters.py` and
+`src/source_models/infer_source_parameters.py` entry points. They support the
+six source banks used across ABCD, HCP and BCP without requiring source-participant
+matrices during exported-model inference. See
+[the parameter guide](docs/MODEL_PARAMETERS.md) for formats, input precision,
+prediction scale, alignment and historical bank compatibility.
+
+Run `python scripts/check_public_tree.py` and
+`python -m unittest discover -s tests -v` before committing. CI runs these checks
+with CPU PyTorch. Only the two generated demonstration CSVs are allowlisted data
+files; models, participant tables and archives are excluded. These checks do not
+certify source-data deletion or grant permission to publish model parameters.
+
 ## Reference
 
 He, T. et al. Meta-matching as a simple framework to translate phenotypic predictive models from big to small data. *Nature Neuroscience* **25**, 795–804 (2022). https://doi.org/10.1038/s41593-022-01059-9
