@@ -1,9 +1,8 @@
 # Source parameters and restricted training artifacts
 
-The repository distributes code and two generated demonstration tables. It does
-not distribute participant records or trained source models. The historical
+The repository distributes code and two generated demonstration tables. The historical
 training and cohort pipelines remain available for use in authorized research
-storage; their serialized artifacts are not publication packages.
+storage.
 
 ## Source banks and their use
 
@@ -16,35 +15,10 @@ storage; their serialized artifacts are not publication packages.
 | Raw-phenotype KRR | 120 single-target models | BCP composite/domain analyses |
 | Raw-disease KRR | 330 single-target models per seed; five seeds | BCP domain analyses |
 
-The full six-bank review collection has 1,790 model files, not 1,790 unique
-phenotypes. The three source families in ABCD final43 are phenotype-PC KRR,
+The full six-bank review collection has 1,790 model files. The three source families in ABCD final43 are phenotype-PC KRR,
 raw-phenotype DNN and disease-PC KRR. HCP's manuscript model uses Final12
 phenotype-PC KRR. The additional raw KRR banks are relevant to BCP; their
 inclusion differs across outcomes and model variants.
-
-## Why the original artifact and a parameter export differ
-
-Historical PC/raw KRR bundles contain per-participant RSFC matrices, training
-indices, IDs and dual coefficients. The raw-disease bundles contain fit IDs
-and require an external UKB RSFC table for the original inference method.
-Deleting IDs alone does not remove participant-level feature rows.
-
-For these **dot-product/correlation kernels only**, write
-`beta = Z_fit.T @ dual_coef`. Prediction then uses `Z_new @ beta`. The standalone
-export contains beta, output names, edge order, and target means/standard
-deviations, with non-participant validation metadata. It contains no fit IDs,
-training matrices, fit indices, dual coefficient vectors or participant outcomes.
-This is a conversion of trained parameters, not a new fit or the original
-joblib serialization. Floating-point order changes: synthetic comparisons use
-`atol=1e-5, rtol=1e-5`. They do not establish equivalence on every historical
-cohort prediction or replace real-input/downstream validation before changing
-scientific results.
-
-DNN state dictionaries can be copied byte-identically after checking their
-keys, tensors and module metadata. Normalization parameters and output names
-are exported separately. Full training logs, split files, participant PC scores
-and predicted phenotype tables are excluded. A state-dictionary field check is
-not a model-inversion or membership-inference assessment.
 
 ## Conversion in authorized local storage
 
